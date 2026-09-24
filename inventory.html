@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management System</title>
+    <link rel="stylesheet" href="inventory.css">
+    </head>
+    <body>
+        <div class="container">
+        <h1>Inventory Management system</h1>
+        <div class="dashboard">
+            <div class="card">
+    <h3>Total Product Sales</h3>
+    <p id="totalSales">0</p>
+</div>
+
+    <div class="card">
+    <h3>Total Sales Amount</h3>
+    <p id="totalSalesAmount">₹0</p>
+</div>
+            <div class="card">
+                <h1>TotalProducts</h1>
+                <p id="totalProducts">0</p>
+            </div>
+                <div class="card">
+                <h1>TotalStock</h1>
+                <p id="totalstock">0</p>
+            </div>
+                <div class="card">
+                <h1>lowStock</h1>
+                <p id="lowstock">0</p>
+            </div>
+        </div>
+        <div class="form-section">
+            <h1>Add product</h1>
+            <input type="text" id="name" placeholder="productName" required>
+            <input type="text" id="category" placeholder="category" required>
+            <input type="number" id="price" placeholder="price" required>
+            <input type="number" id="quantity" placeholder="quantity" required>
+            <button id="addButton" onclick="addButton()">addProduct</button>
+            <button onclick="updateProduct()">Update</button>
+
+        </div>
+        <div class="search-section">
+            <h1>Search Here</h1>
+            <input type="search" id="search" placeholder="search" onkeyup="searchProduct()">
+        </div>
+        <div class="table-section">
+          <h2>Table section</h2>
+          <table>
+            <thead>
+                <tr>
+                    <th>s.no</th>
+                    <th>productName</th>
+                    <th>category</th>
+                    <th>price</th>
+                    <th>quantity</th>
+                    <th>status</th>
+                    <th>Action</th>
+                </tr>
+                     </thead>
+                <tbody id="tablesection">
+                </tbody>
+       
+          </table> 
+        </div>
+<div class="sales-section">
+    <h2>Sales</h2>
+
+    <p id="availableStock"></p>
+
+    <select id="saleProduct" onchange="showAvailableStock()">
+        <option value="">Select Product</option>
+    </select>
+
+    <input
+        type="number"
+        id="saleQuantity"
+        placeholder="Quantity Sold"
+    >
+
+    <button onclick="sellProduct()">Sell</button>
+</div>
+<div class="sales-history">
+    <h2>Sales History</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>Product</th>
+                <th>Quantity Sold</th>
+                <th>Price</th>
+                <th>Total Amount</th>
+                <th>Date</th>              
+<th>Time</th>
+<th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody id="salesTable">
+        </tbody>
+    </table>
+</div>
+
+        </div>
+         <script src="inventory.js"></script>
+    </body>
+</html>
